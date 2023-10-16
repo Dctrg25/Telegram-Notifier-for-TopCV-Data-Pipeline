@@ -41,8 +41,7 @@ def Load_schema():
     cur = conn.cursor()
     conn.set_session(autocommit= True)
 
-    #file_name = 'data_' + 'transformed_' + datetime.now().strftime("%d_%m_%Y") + '.csv'
-    file_name = 'data_transformed_16_10_2023.csv'
+    file_name = 'data_' + 'transformed_' + datetime.now().strftime("%d_%m_%Y") + '.csv'
     root_dir = "/home/truong/airflow/dags/Job_pipeline/Transformed_data" #sua path
     filePath = os.path.join(root_dir, file_name)
     while(os.path.isfile(filePath) != True): time.sleep(3)
@@ -52,4 +51,3 @@ def Load_schema():
 
     cur.close()
     conn.close()
-Load_schema()
